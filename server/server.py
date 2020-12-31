@@ -38,5 +38,4 @@ def predict_loan_status():
 
 if __name__ == "__main__":
     print("Starting Python Flask Server For Loan Status Prediction...")
-    util.load_saved_artifacts()
     app.run()
