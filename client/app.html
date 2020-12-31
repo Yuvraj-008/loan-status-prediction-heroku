@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Status Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">-->
+	<script src="{{ url_for('static',filename='app.js') }}"></script>
+	<link rel="stylesheet"  href= "{{ url_for('static',filename='app.css') }}">
+</head>
+<body>
+<div class="img"></div>
+<form class="form">
+	<h2>Gender</h2>
+   <div>
+		<select class="gender" name="" id="uigender">
+			<option>Male</option>
+			<option>Female</option>
+			<option>Not Specified</option>
+		</select>
+	</div>
+	
+	<h2>Married?</h2>
+   <div>
+		<select class="married" name="" id="uimarried">
+			<option>Yes</option>
+			<option>No</option>
+			<option>Not Specified</option>
+		</select>
+	</div>
+	
+	<h2>Dependents</h2>
+   <div>
+		<select class="dependents" name="" id="uidependents">
+			<option >0</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3+</option>
+		</select>
+	</div>
+	
+	<h2>Education</h2>
+   <div>
+		<select class="education" name="" id="uieducation">
+			<option >Graduate</option>
+			<option>Not Graduate</option>
+		</select>
+	</div>
+	
+	<h2>Self Employed?</h2>
+   <div>
+		<select class="self_employed" name="" id="uiself_employed">
+			<option >No</option>
+			<option>Yes</option>
+		</select>
+	</div>
+	
+	<h2>Applicant Income</h2>
+	<input class="applicantincome"  type="text" id="uiapplicantincome" class="floatLabel" name="applicantincome" value="5000">
+
+	<h2>CoApplicant Income</h2>
+	<input class="coapplicantincome"  type="text" id="uicoapplicantincome" class="floatLabel" name="coapplicantincome" value="0">
+
+	<h2>Loan Amount</h2>
+	<input class="loanamount"  type="text" id="uiloanamount" class="floatLabel" name="loanamount" value="100">
+
+	<h2>Loan Amount Term</h2>
+	<input class="loan_amount_term"  type="text" id="uiloan_amount_term" class="floatLabel" name="loan_amount_term" value="360">
+	
+	<h2>credit Score</h2>
+   <div>
+		<select class="credit_history" name="" id="uicredit_history">
+			<option >1.0</option>
+			<option>0.0</option>
+		</select>
+	</div>
+	
+	<h2>Property Area</h2>
+   <div>
+		<select class="property_area" name="" id="uiproperty_area">
+			<option >Urban</option>
+			<option>Semiurban</option>
+			<option>Rural</option>			
+		</select>
+	</div>
+	<button class="submit" onclick="onClickedPredictLoanStatus()" type="button">Predict Loan Status</button>
+	<div id="uipredictedloanstatus" class="result">	<h2></h2> </div>
+</body>
+</html>
