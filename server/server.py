@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify, render_template
-#import server.util as util
-import util
+import server.util as util
+#import util
 
 app = Flask(__name__, static_url_path="/client", static_folder='../client', template_folder="../client")
 
