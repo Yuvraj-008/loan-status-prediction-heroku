@@ -1,6 +1,7 @@
 import pickle
 import json
 import pandas as pd
+import os
 
 __data_columns = None
 __model = None
@@ -21,13 +22,16 @@ def get_loan_status(Gender,Married,Dependents,Education,Self_Employed,ApplicantI
 def load_saved_artifacts():
     print("loading saved artifacts...start")
     global  __data_columns
-
-    with open("./artifacts/columns.json", "r") as f:
+    
+    path = os.path.dirname(__file__) 
+    artifacts = os.path.join(path, "artifacts")
+    
+    with open(artifacts[0]+"/columns.json", "r") as f:
         __data_columns = json.load(f)['data_columns']
 
     global __model
     if __model is None:
-        with open('./artifacts/Loan_data_model.pickle', 'rb') as f:
+        with open(artifacts[0]+'/Loan_data_model.pickle', 'rb') as f:
             __model = pickle.load(f)
     print("loading saved artifacts...done")
 
@@ -37,4 +41,4 @@ def get_data_columns():
 
 #if __name__ == "__main__":
 load_saved_artifacts()
-    #print(get_loan_status('Male','No','0','Not Graduate','No',3748,1668.0, 110.0, 360.0, 1.0, 'Semiurban'))
+#print(get_loan_status('Male','No','0','Not Graduate','No',3748,1668.0, 110.0, 360.0, 1.0, 'Semiurban'))
